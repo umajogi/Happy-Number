@@ -1,0 +1,12 @@
+#happy number 
+def ischeck(num):
+    seem=set()
+    while num!=1 and num not in seem:
+        seem.add(num)
+        num=sum(int(i)**2 for i in str(num))
+    return num==1
+hp=[]
+for i in range(1,101):
+    if ischeck(i):
+        hp.append(i)
+print(hp)
